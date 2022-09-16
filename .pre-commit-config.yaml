@@ -84,3 +84,11 @@ repos:
             "--rcfile=pyproject.toml",  # Link to your config file
             "--load-plugins=pylint_airflow",
           ]
+      - id: lint-markdown
+        name: Run markdownlint
+        description: Checks the style of Markdown files.
+        entry: markdownlint
+        language: node
+        types: [markdown]
+        files: \.(md|mdown|markdown)$
+        additional_dependencies: ['markdownlint-cli']
